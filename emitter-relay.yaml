@@ -1,9 +1,0 @@
-currenthop:
-  host: tcp://localhost:8080
-  channel: EmitterRelay/
-  key: 8QWqiO5rXmzrq9qBwR9HzKfoBpWAECFD
-
-nexthop:
-  host: tcp://localhost:8080
-  channel: EmitterRelay/
-  key: 8QWqiO5rXmzrq9qBwR9HzKfoBpWAECFD
