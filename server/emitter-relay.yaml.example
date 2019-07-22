@@ -1,0 +1,13 @@
+currenthop:
+  host: tcp://localhost:8080
+  channelin: EmitterRelay/in/
+  keyin: 8QWqiO5rXmzrq9qBwR9HzKfoBpWAECFD
+  channelout: EmitterRelay/out/
+  keyout: 8QWqiO5rXmzrq9qBwR9HzKfoBpWAECFD
+
+nexthop:
+  host: tcp://localhost:8080
+  channelin: EmitterRelay/in/
+  keyin: 8QWqiO5rXmzrq9qBwR9HzKfoBpWAECFD
+  channelout: EmitterRelay/out/
+  keyout: 8QWqiO5rXmzrq9qBwR9HzKfoBpWAECFD

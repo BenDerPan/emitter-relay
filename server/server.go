@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/benderpan/emitter-relay/config"
-	"github.com/benderpan/emitter-relay/route"
+	"github.com/benderpan/emitter-relay/server/config"
+	"github.com/benderpan/emitter-relay/server/route"
 	"time"
 )
 

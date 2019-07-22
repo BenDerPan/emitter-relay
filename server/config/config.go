@@ -1,23 +1,16 @@
 package config
 
 import (
-	"fmt"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 )
 
 type EmitterServerConfig struct {
-	Host    string
-	Channel string
-	Key     string
-}
-
-func (c *EmitterServerConfig) ChannelIn() string {
-	return fmt.Sprintf("%sIn/", c.Channel)
-}
-
-func (c *EmitterServerConfig) ChannelOut() string {
-	return fmt.Sprintf("%sOut/", c.Channel)
+	Host       string
+	ChannelIn  string
+	KeyIn      string
+	ChannelOut string
+	KeyOut     string
 }
 
 type Config struct {

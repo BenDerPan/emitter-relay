@@ -1,4 +1,4 @@
-module github.com/benderpan/emitter-relay
+module github.com/benderpan/emitter-relay/server
 
 go 1.12
 
