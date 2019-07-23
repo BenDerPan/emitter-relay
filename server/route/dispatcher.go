@@ -74,8 +74,8 @@ func (disp *RelayDispatcher) NextHopSendMsg(msg interface{}) error {
 func (disp *RelayDispatcher) Close() {
 	_ = disp.CurrentHop.Unsubscribe(disp.Cfg.CurrentHop.KeyIn, disp.Cfg.CurrentHop.ChannelIn)
 	_ = disp.NextHop.Unsubscribe(disp.Cfg.NextHop.KeyIn, disp.Cfg.NextHop.ChannelIn)
-	disp.CurrentHop.Disconnect(0)
-	disp.NextHop.Disconnect(0)
+	disp.CurrentHop.Disconnect(3)
+	disp.NextHop.Disconnect(3)
 }
 
 func NewDispatcher(cfg *config.Config) *RelayDispatcher {

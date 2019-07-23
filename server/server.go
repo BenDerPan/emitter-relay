@@ -1,27 +1,34 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"github.com/benderpan/emitter-relay/server/config"
 	"github.com/benderpan/emitter-relay/server/route"
+	"os"
+	"os/signal"
 	"time"
 )
 
+var c = flag.String("c", "emitter-relay.yaml", "运行参数")
+
 func main() {
+	flag.Parse()
 	cfg := &config.Config{}
-	err := cfg.Load("emitter-relay.yaml")
+	err := cfg.Load(*c)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Printf("%#v\n%#v\n", cfg.CurrentHop, cfg.NextHop)
 
 	disp := route.NewDispatcher(cfg)
-	disp.Start()
-	for i := 0; i < 10; i++ {
-		time.Sleep(time.Duration(1) * time.Second)
-		disp.CurrentHopSendMsg("你好，我是当前节点")
-		disp.NextHopSendMsg("你好，我是下一跳节点")
+	err = disp.Start()
+	if err != nil {
+		panic(err)
 	}
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt, os.Kill)
+	<-c
 	time.Sleep(time.Duration(3) * time.Second)
 	disp.Close()
 
