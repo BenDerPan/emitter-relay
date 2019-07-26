@@ -16,3 +16,5 @@
 .DS_Store
 *.yaml
 
+client/client
+server/server
